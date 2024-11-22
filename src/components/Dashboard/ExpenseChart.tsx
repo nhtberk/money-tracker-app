@@ -12,6 +12,7 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import { Card } from '@/components/ui/Card';
 import { useBudget } from '@/context/BudgetContext';
 import { groupTransactionsByDate } from '@/utils/calculations';
 
