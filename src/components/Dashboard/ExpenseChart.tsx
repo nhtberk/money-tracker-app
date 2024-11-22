@@ -93,13 +93,11 @@ export default function ExpenseChart() {
 
  if (!hasTransactions) {
         return (
-               <div className="p-6">
-                    <Card className="p-6 text-center">
-                        <p className="text-gray-600 dark:text-gray-400">
-                            Henüz hiç işlem bulunmuyor. Görüntülemek için işlem eklemeye başlayın.
-                        </p>
-                    </Card>
-                </div>
+          <div className="p-6 text-center">
+            <p className="text-gray-600 dark:text-gray-400">
+              Henüz hiç işlem bulunmuyor. Görüntülemek için işlem eklemeye başlayın.
+            </p>
+          </div>
         );
     }
   
