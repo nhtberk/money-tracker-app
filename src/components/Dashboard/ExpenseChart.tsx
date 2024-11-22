@@ -31,6 +31,8 @@ export default function ExpenseChart() {
   const { transactions } = useBudget();
   const dailyData = groupTransactionsByDate(transactions);
 
+  const hasTransactions= transactions.length> 0;
+  
   const data = {
     labels: dailyData.map(d => d.date),
     datasets: [
@@ -88,7 +90,20 @@ export default function ExpenseChart() {
     },
   };
 
+ if (!hasTransactions) {
+        return (
+               <div className="p-6">
+                    <Card className="p-6 text-center">
+                        <p className="text-gray-600 dark:text-gray-400">
+                            Henüz hiç işlem bulunmuyor. Görüntülemek için işlem eklemeye başlayın.
+                        </p>
+                    </Card>
+                </div>
+        );
+    }
+  
   return (
+    
     <div className="w-full h-[300px] relative">
       <Line data={data} options={options} />
     </div>
